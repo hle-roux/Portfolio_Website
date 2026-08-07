@@ -1,12 +1,45 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ScrambleText from './ScrambleText';
+import DottedGlobe from './DottedGlobe';
 
 interface HeroProps {
 	variant?: 'default' | 'alt';
 }
 
+function SkillBadge({ name, index, activeIndex }: { name: string; index: number; activeIndex: number | null }) {
+	const isActive = activeIndex === index;
+	return (
+		<span
+			className={`px-3 py-1.5 rounded-lg text-sm transition-all duration-500 cursor-default shadow-sm border ${
+				isActive
+					? 'border-primary text-primary bg-primary/20 shadow-[0_0_15px_rgba(52,211,153,0.5)] scale-105 font-semibold'
+					: 'bg-surface text-text-muted border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)]'
+			}`}
+		>
+			{name}
+		</span>
+	);
+}
+
 export default function Hero({ variant = 'default' }: HeroProps) {
 	const [copied, setCopied] = useState(false);
+	const [activeSkillIndex, setActiveSkillIndex] = useState<number | null>(0);
+
+	const totalSkills = 13;
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setActiveSkillIndex((prev) => {
+				let next;
+				do {
+					next = Math.floor(Math.random() * totalSkills);
+				} while (next === prev && totalSkills > 1);
+				return next;
+			});
+		}, 1800);
+
+		return () => clearInterval(interval);
+	}, [totalSkills]);
 
 	const handleCopyEmail = (e: React.MouseEvent) => {
 		e.preventDefault();
@@ -17,8 +50,9 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 
 	if (variant === 'alt') {
 		return (
-			<section className="flex-1 flex items-center justify-center text-center py-16 px-4 bg-[radial-gradient(ellipse_at_bottom,var(--color-surface)_0%,transparent_80%)]">
-				<div className="max-w-[800px] w-full">
+			<section className="relative flex-1 flex items-center justify-center text-center py-16 px-4 bg-[radial-gradient(ellipse_at_bottom,var(--color-surface)_0%,transparent_80%)] overflow-hidden">
+				<DottedGlobe color="#ff2a6d" />
+				<div className="max-w-[800px] w-full relative z-10">
 					<h1 className="text-3xl text-[#e6c344] font-mono mb-4 tracking-widest uppercase">
 						<ScrambleText text="[ Designer Créatif ]" />
 					</h1>
@@ -39,11 +73,12 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 	}
 
 	return (
-		<section className="flex-1 flex flex-col items-center justify-start py-12 px-4 md:px-8 bg-bg overflow-y-auto w-full pb-32">
-			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+		<section className="relative flex-1 flex flex-col items-center justify-start py-12 px-4 md:px-8 bg-bg overflow-y-auto w-full pb-32">
+			<DottedGlobe />
+			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
 
 				{/* Bento 1: Profil / Header (Col Span 2) */}
-				<div className="col-span-1 md:col-span-2 bg-surface rounded-[var(--radius-xl)] p-8 shadow-lg border border-white/5 flex flex-col justify-center relative overflow-hidden group hover:border-primary/30 transition-colors">
+				<div className="col-span-1 md:col-span-2 bg-surface/20 backdrop-blur-xl rounded-[var(--radius-xl)] p-8 shadow-xl border border-white/10 flex flex-col justify-center relative overflow-hidden group hover:border-primary/40 transition-all duration-300">
 					{/* Decorative subtle gradient */}
 					<div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
 
@@ -59,7 +94,7 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 				</div>
 
 				{/* Bento 2: Contact / Liens (Col Span 1) */}
-				<div className="col-span-1 bg-surface rounded-[var(--radius-xl)] p-8 shadow-lg border border-white/5 flex flex-col justify-center hover:border-primary/30 transition-colors">
+				<div className="col-span-1 bg-surface/20 backdrop-blur-xl rounded-[var(--radius-xl)] p-8 shadow-xl border border-white/10 flex flex-col justify-center hover:border-primary/40 transition-all duration-300">
 					<h3 className="text-xl font-bold mb-4 text-text flex items-center gap-2">
 						<span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
 						Contact & Liens
@@ -75,7 +110,7 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 							<span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold">in</span>
 							<span className="truncate">[URL LinkedIn]</span>
 						</a>
-						<a href="https://github.com/Robrakai" className="text-text-muted hover:text-primary font-bold  transition-colors flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-primary/50  hover:transition">
+						<a href="https://github.com/hle-roux" className="text-text-muted hover:text-primary font-bold  transition-colors flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-primary/50  hover:transition">
 							<span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold"></span>
 							<span className="truncate justify-center">[GitHub]</span>
 						</a>
@@ -86,8 +121,8 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 				</div>
 
 				{/* Bento 3: Expérience (Col Span 1) */}
-				<div className="col-span-1 bg-surface rounded-[var(--radius-xl)] p-8 shadow-lg border border-white/5 hover:border-primary/30 transition-colors flex flex-col">
-					<h3 className="text-xl font-bold mb-6 text-text border-b border-white/10 pb-4">Expérience</h3>
+				<div className="col-span-1 bg-surface/20 backdrop-blur-xl rounded-[var(--radius-xl)] p-8 shadow-xl border border-white/10 hover:border-primary/40 transition-all duration-300 flex flex-col">
+					<h3 className="text-xl font-bold mb-6 text-text border-b border-white/10 pb-4">Formation</h3>
 					<div className="flex flex-col gap-6 flex-1">
 						<div className="relative pl-6 border-l-2 border-primary/30">
 							<span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-primary"></span>
@@ -110,48 +145,63 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 				</div>
 
 				{/* Bento 4: Compétences (Col Span 2) */}
-				<div className="col-span-1 md:col-span-2 bg-surface rounded-[var(--radius-xl)] p-8 shadow-lg border border-white/5 hover:border-primary/30 transition-colors">
+				<div className="col-span-1 md:col-span-2 bg-surface/20 backdrop-blur-xl rounded-[var(--radius-xl)] p-8 shadow-xl border border-white/10 hover:border-primary/40 transition-all duration-300">
 					<h3 className="text-xl font-bold mb-6 text-text border-b border-white/10 pb-4">Compétences & Expertise</h3>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						{/* Group 1 */}
 						<div className="bg-bg/50 p-5 rounded-2xl border border-white/5">
-							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex items-center gap-2">
-								<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex justify-center items-center gap-2">
+								<span className="w-1.5 h-1.5 rounded-full bg-primary items-center"></span>
 								[WEB - Frontend]
 							</h4>
 							<div className="flex flex-wrap flex-cent gap-2">
-								<span className="px-3 py-1.5 bg-surface rounded-lg text-sm text-text-muted border border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-colors cursor-default shadow-sm">[TypeScript]</span>
-								<span className="px-3 py-1.5 bg-surface rounded-lg text-sm text-text-muted border border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-colors cursor-default shadow-sm">[Requete API]</span>
-								<span className="px-3 py-1.5 bg-surface rounded-lg text-sm text-text-muted border border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-colors cursor-default shadow-sm">[Compétence]</span>
+								<SkillBadge name="[TypeScript]" index={0} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Requete API]" index={1} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Compétence]" index={2} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Compétence]" index={3} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Compétence]" index={4} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Compétence]" index={5} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Compétence]" index={6} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 						{/* Group 2 */}
 						<div className="bg-bg/50 p-5 rounded-2xl border border-white/5">
-							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex items-center gap-2">
+							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex justify-center items-center gap-2">
 								<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
 								[Catégorie 2, ex: Backend]
 							</h4>
 							<div className="flex flex-wrap gap-2">
-								<span className="px-3 py-1.5 bg-surface rounded-lg text-sm text-text-muted border border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-colors cursor-default shadow-sm">[Compétence]</span>
-								<span className="px-3 py-1.5 bg-surface rounded-lg text-sm text-text-muted border border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-colors cursor-default shadow-sm">[Compétence]</span>
+								<SkillBadge name="[Compétence]" index={7} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Compétence]" index={8} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 						{/* Group 3 */}
 						<div className="bg-bg/50 p-5 rounded-2xl border border-white/5">
-							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex items-center gap-2">
+							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex justify-center items-center gap-2">
 								<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
 								[Outils Annexes]
 							</h4>
 							<div className="flex flex-wrap gap-2">
-								<span className="px-3 py-1.5 bg-surface rounded-lg text-sm text-text-muted border border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-colors cursor-default shadow-sm">[Github]</span>
-								<span className="px-3 py-1.5 bg-surface rounded-lg text-sm text-text-muted border border-white/5 hover:border-primary hover:text-primary hover:shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-colors cursor-default shadow-sm">[Bash]</span>
+								<SkillBadge name="[Github]" index={9} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Bash]" index={10} activeIndex={activeSkillIndex} />
+							</div>
+						</div>
+						{/* Group 4 */}
+						<div className="bg-bg/50 p-5 rounded-2xl border border-white/5">
+							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex justify-center items-center gap-2">
+								<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+								[Outils Annexes]
+							</h4>
+							<div className="flex flex-wrap gap-2">
+								<SkillBadge name="[Github]" index={11} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Bash]" index={12} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 					</div>
 				</div>
 
 				{/* Bento 5: Projets Réalisés (Col Span 3) */}
-				<div className="col-span-1 md:col-span-3 bg-surface rounded-[var(--radius-xl)] p-8 shadow-lg border border-white/5 hover:border-primary/30 transition-colors">
+				<div className="col-span-1 md:col-span-3 bg-surface/20 backdrop-blur-xl rounded-[var(--radius-xl)] p-8 shadow-xl border border-white/10 hover:border-primary/40 transition-all duration-300">
 					<h3 className="text-xl font-bold mb-6 text-text border-b border-white/10 pb-4 flex justify-between items-center">
 						<span>Projets Principaux</span>
 						<button className="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1 transition-colors bg-primary/10 px-3 py-1.5 rounded-lg border border-transparent hover:border-primary/50 hover:bg-primary/20">
@@ -218,7 +268,7 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 				</div>
 
 				{/* Bento 6: Projets Réalisés (Col Span 3) */}
-				<div className="col-span-1 md:col-span-3 bg-surface rounded-[var(--radius-xl)] p-8 shadow-lg border border-white/5 hover:border-primary/30 transition-colors">
+				<div className="col-span-1 md:col-span-3 bg-surface/20 backdrop-blur-xl rounded-[var(--radius-xl)] p-8 shadow-xl border border-white/10 hover:border-primary/40 transition-all duration-300">
 					<h3 className="text-xl font-bold mb-6 text-text border-b border-white/10 pb-4 flex justify-between items-center">
 						<span>Projets secondaires et notions apprises</span>
 					</h3>
