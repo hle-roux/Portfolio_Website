@@ -125,11 +125,11 @@ export default function DottedGlobe({
 				const normZ = (pt.z + 1) / 2; // 0 to 1
 
 				// Scale size and opacity based on depth
-				const currentRadius = 0.8 + normZ * 2.2; // 0.8px to 3.0px
-				const alpha = 0.12 + Math.pow(normZ, 1.8) * 0.78; // 0.12 to 0.90
+				const currentRadius = 1.2 + normZ * 2.2; // 1.2px to 3.4px
+				const alpha = 0.22 + Math.pow(normZ, 1.5) * 0.75; // 0.22 to 0.97
 
 				ctx.beginPath();
-				ctx.arc(pt.x, pt.y, Math.max(0.5, currentRadius), 0, Math.PI * 2);
+				ctx.arc(pt.x, pt.y, Math.max(0.6, currentRadius), 0, Math.PI * 2);
 				ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
 				ctx.fill();
 			}
