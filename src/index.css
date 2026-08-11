@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/Switzer.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/Switzer-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
 	/* Palette de couleurs moderne - Deep Dark Blue & Soft Green */
 	--color-primary: #34d399; /* Vert doux (emerald-400) */
@@ -11,7 +35,9 @@
 	--color-text-muted: #94a3b8; /* Gris bleuté (slate-400) */
 
 	/* Typographie */
-	--font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+	--font-sans: 'Switzer', 'Inter', system-ui, sans-serif;
+	--font-switzer: 'Switzer', sans-serif;
+	--font-archivo: 'Archivo', sans-serif;
 
 	/* Bordures */
 	--radius-xl: 1.5rem; /* Pour le bento */
