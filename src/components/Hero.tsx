@@ -23,7 +23,7 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 	const [copied, setCopied] = useState(false);
 	const [activeSkillIndex, setActiveSkillIndex] = useState<number | null>(0);
 
-	const totalSkills = 13;
+	const totalSkills = 26;
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -102,14 +102,15 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 					{/* Decorative subtle gradient */}
 					<div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500"></div>
 
-					<h1 className="text-7xl text-primary font-archivo mb-2">
+					<h1 className="text-7xl text-primary font-bold mb-2">
 						<ScrambleText text="Hugo Le Roux" />
 					</h1>
 					<h2 className="text-2xl text-text font-semibold mb-4">
 						[Etudiant en <span className="text-primary">developpement informatique</span>]
 					</h2>
 					<p className="text-text-muted leading-relaxed max-w-2xl text-lg font-light">
-						[Votre courte biographie. Présentez-vous de manière professionnelle, décrivez votre passion, votre approche technique et ce que vous apportez à une équipe ou un projet.]
+							Étudiant en développement informatique à 42, je suis autonome, autodidacte et adaptable. Ma formation m’a appris à résoudre des problèmes, à apprendre par moi-même et à travailler en équipe.
+							<br/>Je souhaite aujourd’hui mettre ces compétences en pratique et continuer à me former au sein d'une equipe et a travers un projet concret.
 					</p>
 				</div>
 
@@ -139,7 +140,7 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 							</span>
 							<span className="truncate font-medium">[URL LinkedIn]</span>
 						</a>
-						<a href="https://github.com/hle-roux" className="text-text-muted hover:text-primary transition-colors flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/25 backdrop-blur-lg border border-white/15">
+						<a href="https://github.com/hle-roux" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/25 backdrop-blur-lg border border-white/15">
 							<span className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 border border-white/10">
 								<svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
 									<path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
@@ -187,47 +188,60 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 								<span className="w-1.5 h-1.5 rounded-full bg-primary items-center"></span>
 								[WEB - Frontend]
 							</h4>
-							<div className="flex flex-wrap flex-cent gap-2">
-								<SkillBadge name="[TypeScript]" index={0} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Requete API]" index={1} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Compétence]" index={2} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Compétence]" index={3} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Compétence]" index={4} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Compétence]" index={5} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Compétence]" index={6} activeIndex={activeSkillIndex} />
+							<div className="flex flex-wrap flex-cent gap-2 text-white">
+								<SkillBadge name="[HTML5]" index={0} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[CSS3]" index={1} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[TypeScript]" index={2} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[JavaScript]" index={3} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Tailwind]" index={4} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[React]" index={5} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Wordpress]" index={6} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Figma]" index={7} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 						{/* Group 2 */}
 						<div className="bg-slate-800/25 backdrop-blur-lg p-5 rounded-2xl border border-white/15 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]">
 							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex justify-center items-center gap-2">
 								<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-								[Catégorie 2, ex: Backend]
+								[Backend]
 							</h4>
 							<div className="flex flex-wrap gap-2">
-								<SkillBadge name="[Compétence]" index={7} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Compétence]" index={8} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Node.js]" index={8} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Fastify]" index={9} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Rest API]" index={10} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Authentication]" index={11} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 						{/* Group 3 */}
 						<div className="bg-slate-800/25 backdrop-blur-lg p-5 rounded-2xl border border-white/15 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]">
 							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex justify-center items-center gap-2">
 								<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-								[Outils Annexes]
+								[Systems & programming]
 							</h4>
 							<div className="flex flex-wrap gap-2">
-								<SkillBadge name="[Github]" index={9} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Bash]" index={10} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[C]" index={12} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[C++]" index={13} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Memory management]" index={14} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Unix]" index={15} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Processes]" index={16} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Multithreading]" index={17} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Networking]" index={18} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Github]" index={19} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Bash]" index={20} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 						{/* Group 4 */}
 						<div className="bg-slate-800/25 backdrop-blur-lg p-5 rounded-2xl border border-white/15 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15)]">
 							<h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-wider flex justify-center items-center gap-2">
 								<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-								[Outils Annexes]
+								[Data & Database]
 							</h4>
 							<div className="flex flex-wrap gap-2">
-								<SkillBadge name="[Github]" index={11} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Bash]" index={12} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Python]" index={21} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[MySQL]" index={22} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[SQLite]" index={23} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Data analysis]" index={24} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Algorithms]" index={25} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 					</div>
@@ -372,54 +386,112 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
 						{/* Projet 1 */}
-						<a href="https://mylifehub.vercel.app" className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full">
-							<div className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10">
+						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
+							<a href="https://mylifehub.vercel.app/login" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
 								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 								<img src="/LifeHub Logo.png" alt="LifeHub" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-							</div>
+							</a>
 							<div className="p-6 flex flex-col flex-1">
-								<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[LifeHub]</h4>
-								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[Site Web de gestion de projet personnel - Suivi des idees,  etat des projets et passions]</p>
-								<div className="flex flex-wrap gap-2 mt-auto">
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Web]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Front - ts]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Back - sql]</span>
+								<a href="https://mylifehub.vercel.app/login" target="_blank" rel="noopener noreferrer">
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[LifeHub]</h4>
+								</a>
+								<p className="text-sm text-text-muted mb-2 line-clamp-2 leading-relaxed">[Site Web de gestion de projet personnel - Suivi des idees,  etat des projets et passions]</p>
+								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
+									<div className="flex flex-wrap gap-2">
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Web]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Front - ts]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Back - sql]</span>
+									</div>
+								</div>
+								<div className="flex w-full m-2 justify-end">
+									<a
+										href="https://mylifehub.vercel.app/login"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
+										title="View repo"
+									>
+										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
+											View repo
+										</span>
+										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+											<line x1="5" y1="12" x2="19" y2="12" />
+											<polyline points="12 5 19 12 12 19" />
+										</svg>
+									</a>
 								</div>
 							</div>
-						</a>
+						</div>
 
 						{/* Projet 2 */}
-						<a href="#" className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full">
-							<div className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10">
+						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
+							<a href="https://github.com/hle-roux/ft_transcendence" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
 								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 								<img src="/pong.jpg" alt="pong" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-							</div>
+							</a>
 							<div className="p-6 flex flex-col flex-1">
-								<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Transcendance]</h4>
+								<a href="#">
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Transcendance]</h4>
+								</a>
 								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[Jeu Pong en multijoueur sur navigateur avec authentification, database, API, 2FA]</p>
-								<div className="flex flex-wrap gap-2 mt-auto">
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Front - TS]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Back - API - db]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Back - API - db]</span>
+								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
+									<div className="flex flex-wrap gap-2">
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Front - TS]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Back - API - db]</span>
+									</div>
+									<a
+										href="https://github.com/hle-roux/ft_transcendence"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
+										title="View repo"
+									>
+										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
+											View repo
+										</span>
+										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+											<line x1="5" y1="12" x2="19" y2="12" />
+											<polyline points="12 5 19 12 12 19" />
+										</svg>
+									</a>
 								</div>
 							</div>
-						</a>
+						</div>
 
 						{/* Projet 3 */}
-						<a href="#" className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full">
-							<div className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10">
+						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
+							<a href="https://github.com/DX4RK/red-tetris" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
 								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 								<img src="/tetris.png" alt="tetris" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-							</div>
+							</a>
 							<div className="p-6 flex flex-col flex-1">
-								<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Red_Tetris]</h4>
+								<a href="#">
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Red_Tetris] - En Cours</h4>
+								</a>
 								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[Une Web-app Tetris en temps reel et en multijoueur ]</p>
-								<div className="flex flex-wrap gap-2 mt-auto">
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
+									<div className="flex flex-wrap gap-2">
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+									</div>
+									<a
+										href="https://github.com/DX4RK/red-tetris"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
+										title="View repo"
+									>
+										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] px-1 group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
+											View repo
+										</span>
+										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+											<line x1="5" y1="12" x2="19" y2="12" />
+											<polyline points="12 5 19 12 12 19" />
+										</svg>
+									</a>
 								</div>
 							</div>
-						</a>
+						</div>
 
 					</div>
 				</div>
@@ -432,55 +504,112 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
 						{/* Projet 1 */}
-						<a className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full">
-							<div className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10">
+						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
+							<a href="https://github.com/hle-roux/cub3D" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
 								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 								<img src="/raycasting.png" alt="raycasting" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-							</div>
+							</a>
 							<div className="p-6 flex flex-col flex-1">
-								<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Cub3D]</h4>
+								<a href="#">
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Cub3D]</h4>
+								</a>
 								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[Jeu en vue a la 1er personne en 3D realise utilisant le raycasting]</p>
-								<div className="flex flex-wrap gap-2 mt-auto">
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[C]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Raycasting]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Maths ]</span>
+								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
+									<div className="flex flex-wrap gap-2">
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[C]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Raycasting]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Maths ]</span>
+									</div>
+									<a
+										href="https://github.com/hle-roux/cub3D"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
+										title="View repo"
+									>
+										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
+											View repo
+										</span>
+										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+											<line x1="5" y1="12" x2="19" y2="12" />
+											<polyline points="12 5 19 12 12 19" />
+										</svg>
+									</a>
 								</div>
 							</div>
-						</a>
+						</div>
 
 						{/* Projet 2 */}
-						<a href="#" className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full">
-							<div className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10">
+						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
+							<a href="https://github.com/hle-roux/cpp" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
 								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 								<img src="/C++.png" alt="c++" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-							</div>
+							</a>
 							<div className="p-6 flex flex-col flex-1">
-								<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Piscine C++]</h4>
+								<a href="#">
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Piscine C++]</h4>
+								</a>
 								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[10 modules concu pour developper des bases solides en programmation c++ et oriente objet]</p>
-								<div className="flex flex-wrap gap-2 mt-auto">
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[C++]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Object Oriented]</span>
+								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
+									<div className="flex flex-wrap gap-2">
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[C++]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Object Oriented]</span>
+									</div>
+									<a
+										href="https://github.com/hle-roux/cpp"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
+										title="View repo"
+									>
+										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
+											View repo
+										</span>
+										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+											<line x1="5" y1="12" x2="19" y2="12" />
+											<polyline points="12 5 19 12 12 19" />
+										</svg>
+									</a>
 								</div>
 							</div>
-						</a>
+						</div>
 
 						{/* Projet 3 */}
-						<a href="#" className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full">
-							<div className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10">
+						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-lg border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
+							<a href="https://github.com/hle-roux" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
 								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 								<div className="absolute inset-0 flex items-center justify-center text-text-muted/40 font-mono text-sm group-hover:scale-110 transition-transform duration-700">
 									[Espace Image Projet 3]
 								</div>
-							</div>
+							</a>
 							<div className="p-6 flex flex-col flex-1">
-								<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Nom du Projet]</h4>
+								<a href="#">
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Nom du Projet]</h4>
+								</a>
 								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[Courte description du projet. Quel problème résout-il et quelles technologies clés ont été utilisées ?]</p>
-								<div className="flex flex-wrap gap-2 mt-auto">
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
-									<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
+									<div className="flex flex-wrap gap-2">
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+									</div>
+									<a
+										href="https://github.com/hle-roux"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
+										title="View repo"
+									>
+										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
+											View repo
+										</span>
+										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+											<line x1="5" y1="12" x2="19" y2="12" />
+											<polyline points="12 5 19 12 12 19" />
+										</svg>
+									</a>
 								</div>
 							</div>
-						</a>
+						</div>
 
 					</div>
 				</div>

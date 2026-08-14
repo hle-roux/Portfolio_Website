@@ -26,7 +26,7 @@
 
 @theme {
 	/* Palette de couleurs moderne - Deep Dark Blue & Soft Green */
-	--color-primary: #34d399; /* Vert doux (emerald-400) */
+	--color-primary: #12d399; /* Vert doux (emerald-400) */
 	--color-primary-hover: #10b981; /* Vert plus soutenu (emerald-500) */
 	--color-bg: #0f172a; /* Bleu foncé profond (slate-900) */
 	--color-surface: #1e293b; /* Bleu foncé surface (slate-800) */
