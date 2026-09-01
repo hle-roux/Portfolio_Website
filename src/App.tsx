@@ -17,7 +17,7 @@ const SiteContent = ({ variant = 'default' }: { variant?: 'default' | 'alt' }) =
 					<span className="w-2.5 h-2.5 rounded-md bg-primary animate-pulse"></span>
 					{variant === 'default' ? 'Portfolio' : 'MyCreative'}
 				</div>
-				<nav className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-4 md:gap-6 z-10">
+				{/*<nav className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-4 md:gap-6 z-10">
 					<a
 						href="#contact"
 						onClick={(e) => scrollToSection(e, 'contact')}
@@ -46,7 +46,7 @@ const SiteContent = ({ variant = 'default' }: { variant?: 'default' | 'alt' }) =
 					>
 						Projets
 					</a>
-				</nav>
+				</nav>*/}
 				<div className="w-24 hidden md:block"></div>
 			</header>
 			<main className="flex-1 flex flex-col">

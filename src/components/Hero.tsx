@@ -238,10 +238,12 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 							</h4>
 							<div className="flex flex-wrap gap-2">
 								<SkillBadge name="[Python]" index={21} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[MySQL]" index={22} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[SQLite]" index={23} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Data analysis]" index={24} activeIndex={activeSkillIndex} />
-								<SkillBadge name="[Algorithms]" index={25} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Panda]" index={22} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Numpy]" index={23} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[MySQL]" index={24} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[SQLite]" index={25} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Data analysis]" index={26} activeIndex={activeSkillIndex} />
+								<SkillBadge name="[Algorithms]" index={27} activeIndex={activeSkillIndex} />
 							</div>
 						</div>
 					</div>
