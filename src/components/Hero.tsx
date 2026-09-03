@@ -109,8 +109,8 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 						[Etudiant en <span className="text-primary">developpement informatique</span>]
 					</h2>
 					<p className="text-text-muted leading-relaxed max-w-2xl text-lg font-light">
-							Étudiant en développement informatique à 42, je suis autonome, autodidacte et adaptable. Ma formation m’a appris à résoudre des problèmes, à apprendre par moi-même et à travailler en équipe.
-							<br/>Je souhaite aujourd’hui mettre ces compétences en pratique et continuer à me former au sein d'une equipe et a travers un projet concret.
+						Étudiant en développement informatique à 42, je suis autonome, autodidacte et adaptable. Ma formation m’a appris à résoudre des problèmes, à apprendre par moi-même et à travailler en équipe.
+						<br />Je souhaite aujourd’hui mettre ces compétences en pratique et continuer à me former au sein d'une equipe et a travers un projet concret.
 					</p>
 				</div>
 
@@ -148,7 +148,7 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 							</span>
 							<span className="truncate font-medium">[GitHub]</span>
 						</a>
-						<a href="/CV_Hugo_Le_Roux.pdf" download className="mt-2 text-center block bg-primary/10 border border-primary/30 text-primary hover:bg-primary/20 hover:border-primary hover:text-primary hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] font-bold py-3 rounded-xl transition-all uppercase tracking-wider text-sm backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+						<a href="/CV_Hugo_Le_Roux.pdf" download className="mt-2 text-center block bg-primary/10 border border-[#9d615c] text-[#9d615c] hover:bg-primary/20 hover:border-[#9d615c] hover:text-primary hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] font-bold py-3 rounded-xl transition-all uppercase tracking-wider text-sm backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
 							Télécharger CV
 						</a>
 					</div>
@@ -619,3 +619,6 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 		</section>
 	);
 }
+
+
+//#F47C6C

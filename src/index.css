@@ -1,38 +1,45 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Switzer';
-  src: url('/fonts/Switzer.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Switzer';
+	src: url('/fonts/Switzer.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Switzer';
-  src: url('/fonts/Switzer-Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Switzer';
+	src: url('/fonts/Switzer-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Archivo';
-  src: url('/fonts/Archivo.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Archivo';
+	src: url('/fonts/Archivo.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 @theme {
 	/* Palette de couleurs moderne - Deep Dark Blue & Soft Green */
-	--color-primary: #12d399; /* Vert doux (emerald-400) */
-	--color-primary-hover: #10b981; /* Vert plus soutenu (emerald-500) */
-	--color-bg: #0f172a; /* Bleu foncé profond (slate-900) */
-	--color-surface: #1e293b; /* Bleu foncé surface (slate-800) */
-	--color-surface-hover: #334155; /* Bleu foncé au survol (slate-700) */
-	--color-text: #f8fafc; /* Blanc cassé (slate-50) */
-	--color-text-muted: #94a3b8; /* Gris bleuté (slate-400) */
+	--color-primary: #12d399;
+	/* Vert doux (emerald-400) */
+	--color-primary-hover: #10b981;
+	/* Vert plus soutenu (emerald-500) */
+	--color-bg: #0f172a;
+	/* Bleu foncé profond (slate-900) */
+	--color-surface: #1e293b;
+	/* Bleu foncé surface (slate-800) */
+	--color-surface-hover: #334155;
+	/* Bleu foncé au survol (slate-700) */
+	--color-text: #f8fafc;
+	/* Blanc cassé (slate-50) */
+	--color-text-muted: #94a3b8;
+	/* Gris bleuté (slate-400) */
 
 	/* Typographie */
 	--font-sans: 'Switzer', 'Inter', system-ui, sans-serif;
@@ -40,6 +47,6 @@
 	--font-archivo: 'Archivo', sans-serif;
 
 	/* Bordures */
-	--radius-xl: 1.5rem; /* Pour le bento */
+	--radius-xl: 1.5rem;
+	/* Pour le bento */
 }
-
