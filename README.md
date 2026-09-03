@@ -75,11 +75,14 @@ Rendez-vous sur `http://localhost:5173` dans votre navigateur.
 - [x] Intégration des cartes de projets secondaires (*Cub3D*, *Piscine C++*)
 
 ### 🟡 À faire / Idées d'améliorations
-- [ ] Compléter et vérifier l'ensemble des liens sociaux (LinkedIn, profil GitHub)
-- [ ] Ajouter une vraie version PDF à jour du CV dans le répertoire `public/`
-- [ ] Finaliser l'intégration et la démonstration du projet *Red_Tetris*
-- [ ] Ajouter une section blog / articles ou retours d'expérience sur les projets 42
-- [ ] Expérimenter avec des arrière-plans 3D interactifs (Three.js / WebGL / Canvas)
+- [ ] Compléter et vérifier l'ensemble des liens sociaux (LinkedIn, profil GitHub) + couleur
+- [ ] Mettre à jour le CV dans le répertoire `public/`
+- [ ] Supprimer ou Fix le separateur 
+- [ ] Mettre a jour la formation 
+- [ ] Finaliser les competences et stacks maitrisees
+- [ ] Finaliser et paufiner les projets et leurs descriptions
+- [ ] Rajouter contact en bas 
+- [ ] Verifier tous les paragraphes et fautes
 - [ ] Déployer la version finale du site sur Vercel / GitHub Pages avec un domaine personnalisé
 - [ ] Optimiser les images et les assets pour améliorer le score Lighthouse / SEO
 - [ ] [À compléter] : _______________________________________________
@@ -91,4 +94,3 @@ Rendez-vous sur `http://localhost:5173` dans votre navigateur.
 **Hugo Le Roux**
 - Étudiant à l'**École 42**
 - GitHub : [@hle-roux](https://github.com/hle-roux)
-- Email : [hugo.leroux1000@gmail.com](mailto:hugo.leroux1000@gmail.com)
