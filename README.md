@@ -30,29 +30,6 @@ Ce portfolio intègre un système original de **Split-Screen Dual Theme** permet
 
 ---
 
-## 🚀 Installation et Lancement
-
-### Prérequis
-- [Node.js](https://nodejs.org/) (version 18 ou supérieure recommandée)
-- `npm` ou `pnpm` / `yarn`
-
-### Étape 1 : Cloner le dépôt
-```bash
-git clone https://github.com/hle-roux/Portfolio_Website.git
-cd Portfolio_Website
-```
-
-### Étape 2 : Installer les dépendances
-```bash
-npm install
-```
-
-### Étape 3 : Lancer le serveur de développement
-```bash
-npm run dev
-```
-Rendez-vous sur `http://localhost:5173` dans votre navigateur.
-
 ### Scripts disponibles
 - `npm run dev` : Démarre le serveur de développement Vite.
 - `npm run build` : Compile le projet pour la production dans le dossier `dist/`.
