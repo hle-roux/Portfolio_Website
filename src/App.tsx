@@ -12,16 +12,16 @@ const SiteContent = ({ variant = 'default' }: { variant?: 'default' | 'alt' }) =
 
 	return (
 		<div className="min-h-screen flex flex-col bg-[url('/back.png')] bg-cover bg-center bg-no-repeat bg-fixed">
-			<header className="sticky top-0 z-40 w-full px-8 -xl md:px-16 py-5 backdrop-blur-xl bg-[#d0abad2a] border-b border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.15),inset_0_1px_1px_0_rgba(255,255,255,0.2)] flex justify-between items-center relative transition-all duration-300">
+			<header className="sticky top-0 z-40 w-full px-8 -xl md:px-16 py-5 backdrop-blur-md bg-[#d0abad2a] border-b border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.15),inset_0_1px_1px_0_rgba(255,255,255,0.2)] flex justify-between items-center relative transition-all duration-300">
 				<div className="font-bold text-4xl tracking-tight text-text flex items-center gap-2 z-10">
-					<span className="w-2.5 h-2.5 rounded-md bg-primary animate-pulse"></span>
+					<span className="w-2.5 h-2.5 rounded-md bg-[#EF6957] animate-pulse"></span>
 					{variant === 'default' ? 'Portfolio' : 'MyCreative'}
 				</div>
 				{/*<nav className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-4 md:gap-6 z-10">
 					<a
 						href="#contact"
 						onClick={(e) => scrollToSection(e, 'contact')}
-						className="px-5 md:px-6 py-2 rounded-xl text-base md:text-lg font-bold text-white bg-gradient-to-r from-emerald-500/15 via-white/[0.08] to-teal-500/15 backdrop-blur-md border border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2)] hover:bg-white/20 hover:border-white/35 hover:shadow-[0_0_20px_rgba(52,211,153,0.25)] transition-all duration-300"
+						className="px-5 md:px-6 py-2 rounded-xl text-base md:text-lg font-bold text-white bg-gradient-to-r from-emerald-500/15 via-white/[0.08] to-teal-500/15 backdrop-blur-xs border border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2)] hover:bg-white/20 hover:border-white/35 hover:shadow-[0_0_20px_rgba(52,211,153,0.25)] transition-all duration-300"
 					>
 						Contacts
 					</a>

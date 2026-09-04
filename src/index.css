@@ -40,6 +40,9 @@
 	/* Blanc cassé (slate-50) */
 	--color-text-muted: #94a3b8;
 	/* Gris bleuté (slate-400) */
+	--color-contrast: #EF6F62;
+	/* EC5B4B; */
+	/* //F45943; */
 
 	/* Typographie */
 	--font-sans: 'Switzer', 'Inter', system-ui, sans-serif;
