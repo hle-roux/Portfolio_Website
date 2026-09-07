@@ -158,17 +158,17 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 				<div className="col-span-1 bg-slate-900/35 backdrop-blur-xs rounded-[var(--radius-xl)] p-8 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3),inset_0_1px_1px_0_rgba(255,255,255,0.2)] flex flex-col hover:bg-slate-900/50 hover:border-white/35 transition-all duration-300">
 					<h3 className="text-xl font-bold mb-6 text-text border-b border-white/10 pb-4">Formation</h3>
 					<div className="flex flex-col gap-6 flex-1">
-						<div className="relative pl-6 border-l-2 border-contrast/40">
-							<span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-contrast shadow-contrast"></span>
+						<div className="relative pl-6 border-l-2 border-contrast/60">
+							<span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-contrast/80 shadow-contrast"></span>
 							<div className="flex flex-col mb-1">
 								<h4 className="font-bold text-text text-lg hover:text-primary transition-colors cursor-default">[Etudiant developpement]</h4>
 								<span className="text-sm font-medium text-primary mb-1">[2023 - Présent]</span>
 							</div>
 							<p className="text-sm text-text-muted font-medium">[Ecole 42]</p>
-							<p className="text-sm text-text-muted mt-2 line-clamp-3">[Brève description des responsabilités et réalisations clés.]</p>
+							<p className="text-sm text-text-muted mt-2 line-clamp-3">[Preparation d'un diplome en Architecture Informatique]</p>
 						</div>
-						<div className="relative pl-6 border-l-2 border-white/10">
-							<span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-white/20"></span>
+						<div className="relative pl-6 border-l-2 border-contrast/80">
+							<span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-contrast/80"></span>
 							<div className="flex flex-col mb-1">
 								<h4 className="font-bold text-text text-lg hover:text-primary transition-colors cursor-default">[Etudiant en Sciences de l'ingenieur]</h4>
 								<span className="text-sm font-medium text-text-muted mb-1">[2019 - 2023]</span>
@@ -505,6 +505,40 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 					</h3>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
+						{/* Projet 3 */}
+						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-sm border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
+							<a href="https://github.com/hle-roux" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
+								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+								<img src="/python" alt="Python" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+							</a>
+							<div className="p-6 flex flex-col flex-1">
+								<a href="#">
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Formation Python]</h4>
+								</a>
+								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[Courte description du projet. Quel problème résout-il et quelles technologies clés ont été utilisées ?]</p>
+								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
+									<div className="flex flex-wrap gap-2">
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
+									</div>
+									<a
+										href="https://github.com/hle-roux"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
+										title="View repo"
+									>
+										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
+											View repo
+										</span>
+										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+											<line x1="5" y1="12" x2="19" y2="12" />
+											<polyline points="12 5 19 12 12 19" />
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
 						{/* Projet 1 */}
 						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-sm border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
 							<a href="https://github.com/hle-roux/cub3D" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
@@ -520,7 +554,6 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 									<div className="flex flex-wrap gap-2">
 										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[C]</span>
 										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Raycasting]</span>
-										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Maths ]</span>
 									</div>
 									<a
 										href="https://github.com/hle-roux/cub3D"
@@ -549,7 +582,7 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 							</a>
 							<div className="p-6 flex flex-col flex-1">
 								<a href="#">
-									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Piscine C++]</h4>
+									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Formation C++]</h4>
 								</a>
 								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[10 modules concu pour developper des bases solides en programmation c++ et oriente objet]</p>
 								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
@@ -576,42 +609,6 @@ export default function Hero({ variant = 'default' }: HeroProps) {
 							</div>
 						</div>
 
-						{/* Projet 3 */}
-						<div className="group rounded-2xl overflow-hidden bg-slate-800/25 backdrop-blur-sm border border-white/15 shadow-[0_4px_20px_0_rgba(0,0,0,0.25),inset_0_1px_1px_0_rgba(255,255,255,0.15)] flex flex-col h-full relative">
-							<a href="https://github.com/hle-roux" target="_blank" rel="noopener noreferrer" className="h-48 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden border-b border-white/10 block">
-								<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-								<div className="absolute inset-0 flex items-center justify-center text-text-muted/40 font-mono text-sm group-hover:scale-110 transition-transform duration-700">
-									[Espace Image Projet 3]
-								</div>
-							</a>
-							<div className="p-6 flex flex-col flex-1">
-								<a href="#">
-									<h4 className="font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors">[Nom du Projet]</h4>
-								</a>
-								<p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed">[Courte description du projet. Quel problème résout-il et quelles technologies clés ont été utilisées ?]</p>
-								<div className="flex items-end justify-between gap-2 mt-auto pt-2">
-									<div className="flex flex-wrap gap-2">
-										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
-										<span className="text-[10px] uppercase font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-md backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">[Tech]</span>
-									</div>
-									<a
-										href="https://github.com/hle-roux"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="group/repo flex items-center p-2 rounded-xl bg-slate-800/60 border border-white/15 text-primary hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shrink-0 overflow-hidden"
-										title="View repo"
-									>
-										<span className="max-w-0 opacity-0 group-hover/repo:max-w-[100px] group-hover/repo:opacity-100 group-hover/repo:mr-1.5 translate-x-3 group-hover/repo:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap text-xs font-semibold text-primary">
-											View repo
-										</span>
-										<svg className="w-4 h-4 text-primary group-hover/repo:translate-x-1 transition-transform duration-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-											<line x1="5" y1="12" x2="19" y2="12" />
-											<polyline points="12 5 19 12 12 19" />
-										</svg>
-									</a>
-								</div>
-							</div>
-						</div>
 
 					</div>
 				</div>
